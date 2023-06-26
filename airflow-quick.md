@@ -107,26 +107,26 @@ Airflow is a comprehensive platform with multiple components, so there are multi
    1. CeleryExecutor
       1.  Architecture
          ![Alt text](image/image-5.png)
-             - Worker: Performs the assigned tasks
-             - Scheduler: Responsible for adding the tasks to the queue
-             - Web Server: HTTP server provides access to DAG tasks's status information
-             - Database: Contains information about the state of tasks, DAGs, etc.
-             - Celery: queue
+             - **Worker**: Performs the assigned tasks
+             - **Scheduler**: Responsible for adding the tasks to the queue
+             - **Web Server**: HTTP server provides access to DAG tasks's status information
+             - **Database**: Contains information about the state of tasks, DAGs, etc.
+             - **Celery**: queue
                   1. Broker: Stores commands to execute
                   2. Result backend: Stores the status of the completed command
 
       Components communicate with each other in many places.
-         1. Web server --> Workers: Get the task execution log
-         2. Web server --> DAG files: Show the DAG structure
-         3. Web server --> Database: Get the task state
-         4. Workers --> DAG files: Parse the DAG structure and execute the task
-         5. Workers --> Database: Get and store the connection configuration and variables
-         6. Workers --> Celery's result backend: Store the state of the task
-         7. Workers --> Celery's broker: Store the command to execute
-         8. Scheduler --> DAG files: Parse the DAG structure and execute the task
-         9. Scheduler --> Database: Store DAGruns and related tasks
-         10. Scheduler --> Celery's result backend: Get information about the tasks that have been executed
-         11. Scheduler --> Celery's broker: Put the command to execute
+         1. **Web server --> Workers**: Get the task execution log
+         2. **Web server --> DAG files**: Show the DAG structure
+         3. **Web server --> Database**: Get the task state
+         4. **Workers --> DAG files**: Parse the DAG structure and execute the task
+         5. **Workers --> Database**: Get and store the connection configuration and variables
+         6. **Workers --> Celery's result backend**: Store the state of the task
+         7. **Workers --> Celery's broker**: Store the command to execute
+         8. **Scheduler --> DAG files**: Parse the DAG structure and execute the task
+         9. **Scheduler --> Database**: Store DAGruns and related tasks
+         10. **Scheduler --> Celery's result backend**: Get information about the tasks that have been executed
+         11. **Scheduler --> Celery's broker**: Put the command to execute
 
 #The process of executing the task is too complex 
 
