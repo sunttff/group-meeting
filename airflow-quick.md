@@ -128,6 +128,6 @@ Airflow is a comprehensive platform with multiple components, so there are multi
          10. **Scheduler --> Celery's result backend**: Get information about the tasks that have been executed
          11. **Scheduler --> Celery's broker**: Put the command to execute
 
-#The process of executing the task is too complex 
+# The process of executing the task is too complex 
 
-#Next to be continued
+# Next to be continued
